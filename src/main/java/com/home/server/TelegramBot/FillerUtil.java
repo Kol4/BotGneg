@@ -12,8 +12,7 @@ public class FillerUtil {
         whereWeGoMessages.add("куда поедем");
         whereWeGoMessages.add("куда пойдем");
         whereWeGoMessages.add("куда покатим");
-        whereDidWeGoList.add("Минское");
-        whereDidWeGoList.add("Вяча");
+        whereDidWeGoList.add("На Минское");
         whereDidWeGoList.add("К Сане");
         whereDidWeGoList.add("К Вике");
         whereDidWeGoList.add("К Марку");
@@ -30,19 +29,27 @@ public class FillerUtil {
 
     public static void fillWhereDidWeGoToEatList() {
         whereWeGoEatMessages.add("куда кушать");
+        whereWeGoEatMessages.add("куда кушоть");
+        whereWeGoEatMessages.add("куда кушать поедем");
+        whereWeGoEatMessages.add("куда кушоть поедем");
         whereWeGoEatMessages.add("куда едем кушоть");
+        whereWeGoEatMessages.add("куда едем кушать");
         whereWeGoEatMessages.add("где кушать");
+        whereWeGoEatMessages.add("где кушоть");
         whereWeGoEatMessages.add("где кушать будем");
-        whereDidWeGoEatList.add("Mc Donalds");
-        whereDidWeGoEatList.add("KFC");
-        whereDidWeGoEatList.add("Burger King");
-        whereDidWeGoEatList.add("Texas Chicken");
-        whereDidWeGoEatList.add("Лидо");
+        whereDidWeGoEatList.add("В Mc Donalds");
+        whereDidWeGoEatList.add("В KFC");
+        whereDidWeGoEatList.add("В Burger King");
+        whereDidWeGoEatList.add("В Texas Chicken");
+        whereDidWeGoEatList.add("В Лидо");
         whereDidWeGoEatList.add("К цыганам на летнюю кухню");
-        whereDidWeGoEatList.add("Domino's");
-        whereDidWeGoEatList.add("Пицца Лисицца");
-        whereDidWeGoEatList.add("Терра Пицца");
+        whereDidWeGoEatList.add("В Domino's");
+        whereDidWeGoEatList.add("В Пицца Лисицца");
+        whereDidWeGoEatList.add("В Терра Пицца");
         whereDidWeGoEatList.add("Дома");
-        whereDidWeGoEatList.add("За шавой");
+        whereDidWeGoEatList.add("В Doner King");
+        whereDidWeGoEatList.add("В Grill Kebab");
+        whereDidWeGoEatList.add("В Хинкальню");
+        whereDidWeGoEatList.add("На Беларуснефть(не путать с Беларусфильм)");
     }
 }

@@ -11,25 +11,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Bot extends TelegramLongPollingBot {
-    public static ArrayList<String> whereWeGoMessages = new ArrayList<>();
-    public static ArrayList<String> whereWeGoEatMessages = new ArrayList<>();
-    public static ArrayList<String> whereDidWeGoList = new ArrayList<>();
-    public static ArrayList<String> whereDidWeGoEatList = new ArrayList<>();
-    /**
-     * Метод, который возвращает токен, выданный нам ботом @BotFather.
-     *
-     * @return токен
-     */
-    @Override
-    public String getBotToken() {
-        return "1369454903:AAG6r7UtvSF2Tb2PyXz2HGOmvLutcfjvglc";
-    }
+    static ArrayList<String> whereWeGoMessages = new ArrayList<>();
+    static ArrayList<String> whereWeGoEatMessages = new ArrayList<>();
+    static ArrayList<String> whereDidWeGoList = new ArrayList<>();
+    static ArrayList<String> whereDidWeGoEatList = new ArrayList<>();
 
-    /**
-     * Метод-обработчик поступающих сообщений.
-     *
-     * @param update объект, содержащий информацию о входящем сообщении
-     */
     @Override
     public void onUpdateReceived(Update update) {
         try {
@@ -55,6 +41,7 @@ public class Bot extends TelegramLongPollingBot {
             int index = random.nextInt(list.size());
             String item = list.get(index);
             outMessage.setText(item);
+            outMessage.setReplyToMessageId(inMessage.getMessageId());
             execute(outMessage);
         }
     }
@@ -65,17 +52,20 @@ public class Bot extends TelegramLongPollingBot {
             SendPhoto sendPhoto = new SendPhoto().setChatId(inMessage.getChatId());
             sendPhoto.setPhoto("https://sun2.velcom-by-minsk.userapi.com/Z3KMd8BMdOI1krfrsULO52r60YSM8N_jCoEI-g/MyxvRnf_FTc.jpg");
             execute(sendPhoto);
+            SendMessage sendMessage = new SendMessage().setChatId(inMessage.getChatId());
+            sendMessage.setText("схожу с ума от твоих подлокотников");
+            execute(sendMessage);
         }
     }
 
 
-    /**
-     * Метод, который возвращает имя пользователя бота.
-     *
-     * @return имя пользователя
-     */
     @Override
     public String getBotUsername() {
         return "gneg";
+    }
+
+    @Override
+    public String getBotToken() {
+        return "1369454903:AAG6r7UtvSF2Tb2PyXz2HGOmvLutcfjvglc";
     }
 }
