@@ -35,7 +35,7 @@ public class Bot extends TelegramLongPollingBot {
     private void checkMessageType(Message inMessage, ArrayList<String> messages, ArrayList<String> list) throws TelegramApiException {
         SendMessage outMessage = new SendMessage();
         String line = inMessage.getText().replaceAll("[^a-zA-Zа-яА-Я\\s]", "").toLowerCase();
-        if (messages.contains(line)){
+        if (messages.contains(line)) {
             outMessage.setChatId(inMessage.getChatId());
             Random random = new Random();
             int index = random.nextInt(list.size());
@@ -48,12 +48,12 @@ public class Bot extends TelegramLongPollingBot {
 
     private void checkPhoto(Message inMessage) throws TelegramApiException {
         String line = inMessage.getText().replaceAll("[^a-zA-Zа-яА-Я\\s]", "").toLowerCase();
-        if (line.equalsIgnoreCase("детка ты словно")){
+        if (line.equalsIgnoreCase("детка ты словно")) {
             SendPhoto sendPhoto = new SendPhoto().setChatId(inMessage.getChatId());
             sendPhoto.setPhoto("https://sun2.velcom-by-minsk.userapi.com/Z3KMd8BMdOI1krfrsULO52r60YSM8N_jCoEI-g/MyxvRnf_FTc.jpg");
             execute(sendPhoto);
             SendMessage sendMessage = new SendMessage().setChatId(inMessage.getChatId());
-            sendMessage.setText("схожу с ума от твоих подлокотников");
+            sendMessage.setText("Cхожу с ума от твоих подлокотников");
             execute(sendMessage);
         }
     }
