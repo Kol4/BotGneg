@@ -65,7 +65,7 @@ public class Bot extends TelegramLongPollingBot {
 
     private void checkGolodni(Message inMessage) throws TelegramApiException {
         String line = COMPILE.matcher(inMessage.getText()).replaceAll("").toLowerCase();
-        if (line.equalsIgnoreCase("хочу кушоть")) {
+        if (line.equalsIgnoreCase("хочу кушать")) {
             SendSticker sticker = new SendSticker();
             sticker.setChatId(inMessage.getChatId());
             sticker.setSticker("CAACAgIAAxkBAAEBXMRfa1MNpNIGYa1mdTcUx7bD-imMgQACuAADmY-lB4KvrWz3nRM1GwQ");
