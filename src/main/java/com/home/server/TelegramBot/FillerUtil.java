@@ -12,19 +12,19 @@ public class FillerUtil {
         whereWeGoMessages.add("куда поедем");
         whereWeGoMessages.add("куда пойдем");
         whereWeGoMessages.add("куда покатим");
-//        whereDidWeGoList.add("На Минское");
+        whereDidWeGoList.add("На Минское");
         whereDidWeGoList.add("К Сане");
-//        whereDidWeGoList.add("К Вике");
-//        whereDidWeGoList.add("К Марку");
-//        whereDidWeGoList.add("К Коле");
-//        whereDidWeGoList.add("На чижовку арену");
-//        whereDidWeGoList.add("В мак уручье");
-//        whereDidWeGoList.add("На Цну");
-//        whereDidWeGoList.add("На Вячу");
-//        whereDidWeGoList.add("На Беларуснефть(Беларусфильм)");
-//        whereDidWeGoList.add("На Комсомольское Озеро");
-//        whereDidWeGoList.add("На заброшку к самолетам");
-//        whereDidWeGoList.add("На лавки");
+        whereDidWeGoList.add("К Вике");
+        whereDidWeGoList.add("К Марку");
+        whereDidWeGoList.add("К Коле");
+        whereDidWeGoList.add("На чижовку арену");
+        whereDidWeGoList.add("В мак уручье");
+        whereDidWeGoList.add("На Цну");
+        whereDidWeGoList.add("На Вячу");
+        whereDidWeGoList.add("На Беларуснефть(Беларусфильм)");
+        whereDidWeGoList.add("На Комсомольское Озеро");
+        whereDidWeGoList.add("На заброшку к самолетам");
+        whereDidWeGoList.add("На лавки");
     }
 
     public static void fillWhereDidWeGoToEatList() {
