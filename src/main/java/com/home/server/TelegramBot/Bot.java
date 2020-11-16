@@ -27,11 +27,11 @@ public class Bot extends TelegramLongPollingBot {
             FillerUtil.fillWhereDidWeGoToEatList();
             if (update.hasMessage() && update.getMessage().hasText()) {
                 Message inMessage = update.getMessage();
-                checkVika(inMessage);
-                checkMessageType(inMessage, whereWeGoMessages, whereDidWeGoList);
-                checkMessageType(inMessage, whereWeGoEatMessages, whereDidWeGoEatList);
-                checkPhoto(inMessage);
-                checkGolodni(inMessage);
+                checkMinus(inMessage);
+//                checkMessageType(inMessage, whereWeGoMessages, whereDidWeGoList);
+//                checkMessageType(inMessage, whereWeGoEatMessages, whereDidWeGoEatList);
+//                checkPhoto(inMessage);
+//                checkGolodni(inMessage);
             }
         } catch (TelegramApiException e) {
             e.printStackTrace();
@@ -64,6 +64,14 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
+    private void checkMinus(Message inMessage) throws TelegramApiException {
+        SendMessage outMessage = new SendMessage();
+        outMessage.setChatId(inMessage.getChatId());
+        outMessage.setText("-");
+        outMessage.setReplyToMessageId(inMessage.getMessageId());
+        execute(outMessage);
+    }
+
     private void checkGolodni(Message inMessage) throws TelegramApiException {
         String line = COMPILE.matcher(inMessage.getText()).replaceAll("").toLowerCase();
         if (line.equalsIgnoreCase("хочу кушать")) {
@@ -73,18 +81,6 @@ public class Bot extends TelegramLongPollingBot {
             execute(sticker);
         }
     }
-
-    private void checkVika(Message inMessage) throws TelegramApiException {
-        String line = COMPILE.matcher(inMessage.getText()).replaceAll("").toLowerCase();
-        if (line.equalsIgnoreCase("хочу кушать")) {
-            inMessage.getReplyToMessage();
-            SendSticker sticker = new SendSticker();
-            sticker.setChatId(inMessage.getChatId());
-            sticker.setSticker("CAACAgIAAxkBAAEBXMRfa1MNpNIGYa1mdTcUx7bD-imMgQACuAADmY-lB4KvrWz3nRM1GwQ");
-            execute(sticker);
-        }
-    }
-
 
     @Override
     public String getBotUsername() {
